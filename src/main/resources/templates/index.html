@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Material Admin</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  </head>
+  <body>
+
+
+
+  <div class="page login-page">
+    <div class="container d-flex align-items-center">
+      <div class="form-holder has-shadow">
+        <div class="form-holder bg-white">
+        <table class="table table-bordered">
+
+          <thead>
+          <tr>
+            <th>记录序列</th>
+            <th>用户ID</th>
+            <th>登陆时间</th>
+            <th>登陆地址</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr  th:each="userLogs : ${userLog}" >
+            <td th:text="${userLogs.login_id}"></td>
+            <td th:text="${userLogs.user_id}"></td>
+            <td th:text="${#dates.format(userLogs.login_time,'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${userLogs.login_ip}"></td>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  </body>
+</html>

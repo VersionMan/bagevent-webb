@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.li.dao.userloginlogDao">
+    <select id="alluserLogin"   resultType="com.li.entity.userloginlog">
+  SELECT * FROM userloginlog
+    </select>
+<insert id="insertOneLog" parameterType="com.li.entity.userloginlog">
+INSERT INTO UserLoginLog VALUES(DEFAULT,#{user_id},#{login_time},'127.0.0.1')
+</insert>
+</mapper>
